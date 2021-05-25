@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DreamBox.Mobile.Gestao.Views.Menu"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+                <Frame Grid.Column="0" BackgroundColor="Transparent">
+                    <Button 
+                        Text="sair" 
+                        TranslationX="0" TranslationY="1"  
+                        FontSize="12" TextColor="white" 
+                        BackgroundColor="Red" 
+                        CornerRadius="20" 
+                        Visual="Material"
+                      
+                       Clicked="BtnLogout"
+                        BorderWidth="2"
+                        ImageSource="ic_plus_circle_outline_white_18dp.png"
+                       
+                       />
+                </Frame>
+            </Grid>
+
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <!-- Place new controls here -->
+
+                <Grid>
+
+
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition>
+
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+
+
+
+                    <Frame BackgroundColor="Green" WidthRequest="100" HeightRequest="100" HasShadow="True" CornerRadius="10" Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.Row="2" Margin="10" >
+                        <Button Text="Vender" BackgroundColor="transparent" Clicked="BtnSell"></Button>
+                    </Frame>
+                    <Frame BackgroundColor="Purple" WidthRequest="100" HeightRequest="100" HasShadow="True" CornerRadius="10" Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="1" Grid.Row="2" Margin="10">
+                        <Button Text="Finanças" BackgroundColor="transparent" Clicked="BtnMoney"></Button>
+                    </Frame>
+                    <Frame BackgroundColor="Red" WidthRequest="100" HeightRequest="100" HasShadow="True" CornerRadius="10" Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="2" Grid.Row="2" Margin="10">
+                        <Button Text="Cadastro" BackgroundColor="transparent" Clicked="BtnRegister"></Button>
+                    </Frame>
+
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

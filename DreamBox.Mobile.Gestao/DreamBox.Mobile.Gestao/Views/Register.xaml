@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DreamBox.Mobile.Gestao.Views.Register">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+
+                <Label Text="Cadastrar Item" FontSize="30" Grid.Row="1" HorizontalOptions="Center" TextColor="Black"/>
+
+                <Label Text="nome" Grid.Row="3" HorizontalOptions="Center" Margin="0, 30, 0, 0" TextColor="black"/>
+                <Entry x:Name="txtNome" Grid.Row="4" HorizontalOptions="Center" WidthRequest="150" Placeholder="Nome" IsSpellCheckEnabled="false" />
+
+
+                <Label Text="Valor" Grid.Row="5" HorizontalOptions="Center" Margin="0, 30, 0, 0"  TextColor="black"/>
+
+                <Entry x:Name="txtPreco" Grid.Row="6" WidthRequest="150" HorizontalOptions="Center" Placeholder="Valor" Keyboard="Numeric" />
+
+            </Grid>
+
+
+
+            <Button Text="Cadastrar" WidthRequest="120" HorizontalOptions="End" Margin="20" Clicked="BtnCadastrar"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
