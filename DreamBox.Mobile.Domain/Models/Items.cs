@@ -11,6 +11,6 @@ namespace DreamBox.Mobile.Domain.Models
         [Key]
         public int Id { get; set; }
         public string nome { get; set; }
-        public string preco { get; set; }
+        public double preco { get; set; }
     }
 }

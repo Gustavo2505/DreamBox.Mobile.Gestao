@@ -9,43 +9,52 @@ using System.Threading.Tasks;
 
 namespace DreamBox.Mobile.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Estabelecimentos")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class EstabelecimentosController : ControllerBase
     {
         private DataContext _data;
-        public UsersController(DataContext data)
+        public EstabelecimentosController(DataContext data)
         {
             _data = data;
         }
 
         //TODO: CRIAR METODO PARA CADASTRAR E EXCLUIR USUÁRIOS;
-        [HttpGet]
-        public IActionResult GetUser(string email, string password)
+        [HttpGet("Get")]
+        public IActionResult GetEstabelecimento(string nome)
         {
-            Usuarios userDb = _data.Usuarios.FirstOrDefault(a => a.Email == email && a.Senha == password);
+            
+            Estabelecimentos estabelecimentos = _data.Estabelecimentos.FirstOrDefault(a => a.Nome == nome);
 
 
-            if (userDb == null)
+            if (estabelecimentos == null)
             {
                 return NotFound();
             }
-            return new JsonResult(userDb);
+            return new JsonResult(estabelecimentos);
 
         }
 
 
-        [HttpPost]
-        public IActionResult AddUser(Usuarios user)
+        [HttpPost("Add")]
+        public IActionResult IncluirEstabelecimento(Estabelecimentos estabelecimentos)
         {
-           
-            _data.Usuarios.Add(user);
+            _data.Estabelecimentos.Add(estabelecimentos);
             _data.SaveChanges();
             //_data.SaveChanges(); metodo esta correto, mas preciso verificar o pq ele não esta salvando no banco ("minha suspeita é que não esta sendo populado todas as tabelas")
-            return CreatedAtAction("GetUser", new { id = user.Id }, user);
+            return CreatedAtAction(nameof(GetEstabelecimento),
+                new
+                {
+                    nome = estabelecimentos.Nome,
+                    // usuario = estabelecimentos.UsuariosId
+
+                }, estabelecimentos);
         }
-      /*   [HttpGet]
-         public IActionResult GetUserId(int id)
+
+
+
+      /*  [HttpGet ("{Id}")]
+         public IActionResult GetItem(int id)
          {
              Items itemsdb = _data.Items.Find(id);
 
@@ -55,7 +64,7 @@ namespace DreamBox.Mobile.Api.Controllers
              }
              return new JsonResult(itemsdb);
          }
-   /*      public IActionResult AddItem(Vendas vendas)
+      /*   public IActionResult AddItem(Vendas vendas)
          {
              _data.Vendas.Add(vendas);
              _data.SaveChanges();

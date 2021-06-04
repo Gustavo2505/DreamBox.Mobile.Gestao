@@ -1,4 +1,5 @@
 ﻿using DreamBox.Mobile.Domain.Models;
+using DreamBox.Mobile.Gestao.Models;
 using DreamBox.Mobile.Gestao.Services;
 using DreamBox.Mobile.Gestao.Utility.Load;
 using Rg.Plugins.Popup.Extensions;
@@ -83,6 +84,31 @@ namespace DreamBox.Mobile.Gestao.Views
         private void BtnVoltar(object sender, EventArgs e)
         {
             Navigation.PopModalAsync();
+        }
+
+        private async void BtnAdiciona(object sender, EventArgs e)
+        {
+         /*   string nome = txtNome.Text;
+            string price = txtPreco.Text;
+
+            Vendas vendas = new Vendas() { Nome = nome, preco = price };
+
+
+
+            await Navigation.PushPopupAsync(new Loading());
+            ResponseService<Items> responseService = await _service.AddItems(items);
+            if (responseService.isSucess)
+            {
+
+                await DisplayAlert("Sucesso", "Item inserido", "OK");
+                await Navigation.PopAllPopupAsync();
+                await Navigation.PopModalAsync();
+
+            }
+            else
+            {
+                await DisplayAlert("Erro", "Item nao inserido, consulte o adminsitrador do sistema", "OK");
+            }*/
         }
     }
 }

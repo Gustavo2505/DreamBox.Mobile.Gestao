@@ -14,7 +14,7 @@ namespace DreamBox.Mobile.Gestao.Services
 
         public async Task<ResponseService<Usuarios>> GetUSer(string email, string password)
         {
-            HttpResponseMessage response = await _cliente.GetAsync($"{BaseApiUrl}/api/Users?email={email}&password={password}");
+            HttpResponseMessage response = await _cliente.GetAsync($"{BaseApiUrl}/api/Users?email={email}&Senha={password}");
 
             ResponseService<Usuarios> responseService = new ResponseService<Usuarios>();
             responseService.isSucess = response.IsSuccessStatusCode;

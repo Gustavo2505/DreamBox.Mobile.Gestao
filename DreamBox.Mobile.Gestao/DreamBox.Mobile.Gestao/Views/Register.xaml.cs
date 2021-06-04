@@ -32,9 +32,9 @@ namespace DreamBox.Mobile.Gestao.Views
         private async void BtnCadastrar(object sender, EventArgs e)
         {
             string nome = txtNome.Text;
-            string price = txtPreco.Text;
+            var price = txtPreco.Text;
 
-            Items items = new Items() { nome = nome, preco = price };
+            Items items = new Items() { nome = nome, preco = Convert.ToDouble(price) };
 
 
 

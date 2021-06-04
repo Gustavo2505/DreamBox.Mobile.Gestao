@@ -69,12 +69,10 @@
 
                                         </FormattedString>
                                     </Label.FormattedText>
-                                </Label>
+                               </Label>
 
-
-                                <Entry FontSize="23"  Text="{Binding preco}" Grid.Column="2"/>
-                                <Button Grid.Column="3"  FontSize="23" CommandParameter="{Binding .}" ImageSource="ic_trash_can_outline_black_18dp.png" Text="+"   />
-
+                                <Entry x:Name="EntryPreco" FontSize="23"  Text="{Binding preco}" Grid.Column="2"/>
+                                <Button Grid.Column="3"  FontSize="23" CommandParameter="{Binding .}" Text="+"  Clicked="BtnAdiciona"  />
                             </Grid>
 
                         </DataTemplate>

@@ -30,7 +30,8 @@ namespace DreamBox.Mobile.Api
 
             services.AddDbContext<DataContext>(options =>
             {
-                options.UseSqlite("Data Source=Database\\Gestao.db");
+            options.UseSqlite("Data Source=Database\\Gestao.db");
+                //options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
             });
             services.AddControllers();
         }
@@ -38,6 +39,7 @@ namespace DreamBox.Mobile.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+    
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

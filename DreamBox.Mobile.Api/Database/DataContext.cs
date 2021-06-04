@@ -16,10 +16,16 @@ namespace DreamBox.Mobile.Api.Database
             Database.EnsureCreated();
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies();
+        }
         public DbSet<Usuarios> Usuarios { get; set; }
-
+        public DbSet<Estabelecimentos> Estabelecimentos {get;set;}
         public DbSet<Items> Items { get; set; }
         public DbSet<Vendas> Vendas { get; set; }
 
+
+      
     }
 }
